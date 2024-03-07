@@ -1,0 +1,227 @@
+@font-face {
+    font-family: apercu;
+    src: url(../assets/fonts/apercu-light-pro.woff2);
+}
+@font-face {
+    font-family: stallman;
+    src: url(../assets/fonts/stallman-regular.woff2);
+}
+@font-face {
+    font-family: bank-sans;
+    src: url(../assets/fonts/bank-sans-compressed.woff2);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+:root{
+    --white: #FFFFFF;
+    --white-80: rgba(255,255,255,.8);
+    --white-40: rgba(255,255,255,.4);
+    --pink: #E593F0;
+    --apercu: apercu, sans-serif;
+    --stallman: stallman, sans-serif;
+    --bank-sans: bank-sans, sans-serif;
+}
+body{
+    background-image: url("../assets/images/background.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+}
+.logo{
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+.logo p{
+    font-family: var(--stallman);
+    line-height: 80%;
+}
+.logo p:nth-child(1){
+    font-size: 18px;
+}
+.logo p:nth-child(2){
+    font-size: 35px;
+}
+nav{
+    padding: 20px;
+}
+nav ul{
+    display: flex;
+    gap: 20px;
+}
+ul li{
+    list-style: none;
+}
+nav ul li a{
+    color: var(--white);
+    font-family: var(--bank-sans);
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s;
+}
+nav ul li a i{
+    font-size: 13px;
+}
+ul li a:hover, ul li a:hover i{
+    color: var(--pink);
+    filter: drop-shadow(0 0 10px var(--pink));
+    transition: .2s;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: var(--white);
+    font-family: var(--stallman);
+    font-size: 164px;
+    letter-spacing: 2px;
+    line-height: 60%;
+}
+h1 span:nth-child(2){
+    font-family: var(--bank-sans);
+    font-size: 36px;
+}
+h1 .line{
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% + 6px));
+}
+h1 .line:nth-child(4){
+    left: 0;
+}
+h1 .line:nth-child(5){
+    right: 0;
+    transform: translateY(calc(-50% + 6px)) rotateY(180deg);
+}
+.section-1 .text-conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 104px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+p{
+    color: var(--white);
+}
+p.center{
+    width: 60%;
+    text-align: center;
+    color: var(--white-80);
+    font-family: var(--apercu);
+    font-size: 15px;
+}
+p.center:nth-child(1){
+    font-family: var(--bank-sans);
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.buttons button{
+    background: none;
+    width: 50px;
+    aspect-ratio: 1/1;
+    position: relative;
+    border: none;
+    border: solid 1px var(--pink);
+    border-radius: 50%;
+}
+.buttons button i{
+    color: var(--white);
+    font-size: 12px;
+    transition: .2s;
+}
+.buttons button:hover > i{
+    font-size: 14px;
+    transition: .2s;
+}
+.buttons button ul{
+    width: 0;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateX(-100%) translateY(-50%);
+    transition: .2s;
+    overflow: hidden;
+}
+.buttons button:hover ul{
+    width: 250%;
+    padding: 20px;
+    opacity: 1;
+    transition: .2s;
+}
+.buttons button ul li a i{
+    font-size: 14px;
+}
+.down{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%) translateY(-100%);
+    border: solid 1px var(--white-40);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.down .icon{
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    animation: arrowAnimation 3s ease-in-out infinite;
+}
+@keyframes arrowAnimation{
+    0%{
+        margin-top: -50px;
+    }
+    50%{
+        margin-top: 0px;
+    }
+    70%{
+        margin-top: 0px;
+    }
+    100%{
+        margin-top: 50px;
+    }
+}
+.down .icon i{
+    color: var(--white-40);
+}
